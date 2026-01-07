@@ -3,188 +3,282 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profile</title>
+  <title>Profile - Leanarita Kaluna</title>
 
   <style>
-    :root{
-      --bg:#393f94;
-      --card:#ffffff;
-      --primary:#b8b5ff;
-      --secondary:#ffd6e8;
-      --text:#000000;
-      --muted:#000000;
+    :root {
+      --bg: #9f8bf2;
+      --primary: #b8b5ff;
+      --secondary: #f28ab7;
+      --text: #1a1a1a;
+      --white: #ffffff;
     }
 
-    *{
-      box-sizing:border-box;
-      font-family:'Segoe UI', system-ui, sans-serif;
+    * {
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
     }
 
-    body{
-      margin:0;
-      background:linear-gradient(135deg, var(--bg), #ffffff);
-      color:var(--text);
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #f7f6fb 0%, var(--bg) 100%);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    /* NAVBAR */
-    header{
-      background:#fff;
-      border-bottom:1px solid #ddd;
+    /* NAVBAR MODERN */
+    header {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
-    .nav{
-      max-width:1000px;
-      margin:auto;
-      padding:14px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .logo{
-      font-weight:600;
+    .logo {
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -0.5px;
+      color: var(--bg);
     }
 
-    .nav a{
-      margin-left:16px;
-      text-decoration:none;
-      color:#000;
-      font-size:14px;
+    .nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s;
     }
 
-    /* CONTENT */
-    .container{
-      max-width:900px;
-      margin:auto;
-      padding:60px 20px;
+    .nav a:hover {
+      color: var(--secondary);
     }
 
-    h1{
-      font-size:36px;
-      margin-bottom:10px;
+    /* LAYOUT UTAMA */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 24px;
     }
 
-    .subtitle{
-      color:var(--muted);
-      margin-bottom:40px;
-      max-width:520px;
+    .profile-header {
+      margin-bottom: 80px;
     }
 
-    .card{
-      background:var(--card);
-      border-radius:20px;
-      padding:28px;
-      margin-bottom:24px;
-      box-shadow:0 20px 40px rgba(0,0,0,0.06);
+    .profile-header h1 {
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      margin: 0;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -2px;
     }
 
-    .card h2{
-      margin-top:0;
-      margin-bottom:16px;
-      font-size:22px;
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .profile-header p {
+      font-size: 1.1rem;
+      color: #444;
+      max-width: 600px;
+      margin-top: 20px;
     }
 
-    .card p{
-      margin:6px 0;
-      color:var(--muted);
-      font-size:15px;
+    /* GRID MODERN UNTUK KONTEN */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
     }
 
-    ul{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-      font-size:15px;
+    .section-box {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(5px);
+      padding: 40px;
+      border-radius: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transition: transform 0.3s ease;
     }
 
-    footer{
-      text-align:center;
-      margin-top:60px;
-      font-size:12px;
-      color:var(--muted);
+    .section-box:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Span 12 = Full, Span 6 = Setengah */
+    .data-diri { grid-column: span 7; }
+    .keahlian { grid-column: span 5; }
+    .pengalaman { grid-column: span 12; }
+    .pendidikan { grid-column: span 6; }
+    .kontak { grid-column: span 6; }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    /* Styling Detail Info */
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    .info-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #666;
+      font-weight: 600;
+    }
+
+    .info-value {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--white);
+      border-radius: 12px;
+      margin: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .data-diri, .keahlian, .pengalaman, .pendidikan, .kontak {
+        grid-column: span 12;
+      }
+      .profile-header h1 { font-size: 3rem; }
     }
   </style>
 </head>
-<script src="script.js"></script>
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <div class="nav">
-    <div class="logo">Profile</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="profile.html">Profile</a>
-      <a href="project.html">Project</a>
-      <a href="media.html">Media</a>
-      <a href="informasi.html">Informasi</a>
-      <a href="kontak.html">Kontak</a>
-    </nav>
-  </div>
-</header>
+  <header>
+    <div class="nav">
+      <div class="logo">LK.</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="project.html">Project</a>
+        <a href="media.html">Media</a>
+        <a href="informasi.html">Informasi</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="container">
-  <h1>Profile</h1>
-  <p class="subtitle">
-    Halaman ini berisi gambaran singkat tentang diri saya,
-    mulai dari data pribadi, latar belakang, sampai pengalaman.
-  </p>
+  <main class="container">
+    
+    <div class="profile-header">
+      <h1>Leanarita<br>Kaluna S</h1>
+      <p>Mahasiswa Sistem Informasi yang berfokus pada eksplorasi desain web dan manajemen data administrasi.</p>
+    </div>
 
-  <!-- DATA DIRI -->
-  <div class="card">
-    <h2>📌 Data Diri</h2>
-    <p>Nama : Leanarita Kaluna S</p>
-    <p>NIM : 251011700994</p>
-    <p>Kelas : 01SIFP017</p>
-  </div>
+    <div class="profile-grid">
+      
+      <div class="section-box data-diri">
+        <h2>📌 Background</h2>
+        <div class="info-item">
+          <span class="info-label">Student ID</span>
+          <span class="info-value">251011700994</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Class</span>
+          <span class="info-value">01SIFP017</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Location</span>
+          <span class="info-value">Tangerang Selatan, Banten</span>
+        </div>
+      </div>
 
-  <!-- KEAHLIAN -->
-  <div class="card">
-    <h2>🛠 Keahlian & Minat</h2>
-    <p>
-      Tertarik di bidang pengembangan web, khususnya pembuatan
-      website sederhana menggunakan HTML dan CSS. Saat ini
-      masih terus belajar dan mengembangkan kemampuan.
-    </p>
-  </div>
+      <div class="section-box keahlian">
+        <h2>🛠 Skills</h2>
+        <div class="skill-tag">Web Development</div>
+        <div class="skill-tag">HTML5 & CSS3</div>
+        <div class="skill-tag">Data Administration</div>
+        <div class="skill-tag">UI Exploration</div>
+      </div>
 
-  <!-- PENGALAMAN -->
-  <div class="card">
-    <h2>💼 Pengalaman</h2>
-    <p>
-      Pernah menjalani Praktik Kerja Lapangan (PKL) selama 3 bulan
-      di Kementerian Agama. Kegiatan yang dilakukan meliputi
-      pendataan surat, pengarsipan dokumen, dan penataan data administrasi.
-    </p>
-  </div>
+      <div class="section-box pengalaman">
+        <h2>💼 Experience</h2>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+          <div>
+            <h3 style="margin:0">Kementerian Agama</h3>
+            <span style="color: var(--secondary); font-weight: 600;">Internship / PKL</span>
+          </div>
+          <span style="font-size: 14px; background: #eee; padding: 4px 12px; border-radius: 20px;">3 Months</span>
+        </div>
+        <p>Bertanggung jawab dalam digitalisasi surat masuk/keluar, pengarsipan dokumen negara, dan optimasi alur administrasi kantor.</p>
+      </div>
 
-  <!-- PENDIDIKAN -->
-  <div class="card">
-    <h2>🎓 Pendidikan</h2>
-    <ul>
-      <li>SD : SDN Limbngan Timur 1</li>
-      <li>SMP : SMPIT Al-Hidayah</li>
-      <li>SMA/SMK : SMK Widya Nusantara</li>
-    </ul>
-  </div>
+      <div class="section-box pendidikan">
+        <h2>🎓 Education</h2>
+        <ul>
+          <li><span>SMK Widya Nusantara</span> <strong>Graduated</strong></li>
+          <li><span>SMPIT Al-Hidayah</span> <strong>Graduated</strong></li>
+          <li><span>SDN Limbangan Timur 1</span> <strong>Graduated</strong></li>
+        </ul>
+      </div>
 
-  <!-- KONTAK -->
-  <div class="card">
-    <h2>📞 Kontak</h2>
-    <p>Email : kaluna072@gmail.com</p>
-    <p>No. HP : 0895327204017</p>
-    <p>Alamat : Tangerang Selatan, Banten</p>
-  </div>
+      <div class="section-box kontak">
+        <h2>📞 Get In Touch</h2>
+        <div class="info-item">
+          <span class="info-label">Email</span>
+          <span class="info-value">kaluna072@gmail.com</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Phone</span>
+          <span class="info-value">0895327204017</span>
+        </div>
+      </div>
 
-  <footer>
-    © 2026 — Halaman Profile
-  </footer>
+    </div>
 
-  <!-- Panggil JavaScript eksternal -->
+    <footer>
+      © 2026 — Designed by Leanarita Kaluna.
+    </footer>
+ <!-- Panggil file JavaScript eksternal -->
   <script src="script.js"></script>
 
 </body>
+</html>
 </html>

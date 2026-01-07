@@ -3,112 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Project</title>
+  <title>Home | Leanarita Kaluna</title>
 
   <style>
     :root {
-      --bg: #9f8bf2;
-      --card: #ffffff;
+      --bg: #393f94;
       --primary: #b8b5ff;
       --secondary: #f28ab7;
-      --text: #000000;
-      --muted: #333333; /* Sedikit lebih soft untuk sub-text */
+      --accent: #ffd6e8;
+      --text: #1a1a1a;
     }
 
     * {
       box-sizing: border-box;
-      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     }
 
     body {
       margin: 0;
-      background: linear-gradient(180deg, var(--bg), #f7f6fb);
+      /* Gradasi menyatu dengan profile agar seamless */
+      background: linear-gradient(135deg, var(--bg) 0%, #6366f1 50%, #ffffff 100%);
+      background-attachment: fixed;
       color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
     }
 
+    /* NAVBAR MODERN */
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #ddd;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(15px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
     .nav {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
-      padding: 14px 20px;
+      padding: 18px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .logo {
-      font-weight: 600;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -1px;
+      color: var(--bg);
     }
 
     .nav a {
-      margin-left: 16px;
+      margin-left: 20px;
       text-decoration: none;
       color: var(--text);
       font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s ease;
     }
 
-    /* Bagian Hero yang diubah ke tengah */
+    .nav a:hover { color: var(--secondary); }
+
+    /* HERO SECTION */
     .hero {
-      flex: 1; /* Agar konten mengisi ruang sisa dan footer tetap di bawah */
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 20px;
+      padding: 40px 24px;
+      position: relative;
     }
 
+    /* Efek tulisan gradasi biar Pro */
     .hero h1 {
-      font-size: 48px; /* Lebih besar untuk nama */
-      margin-bottom: 8px;
-      letter-spacing: 0.5px;
+      font-size: clamp(3rem, 10vw, 5.5rem);
+      font-weight: 900;
+      margin: 0;
+      letter-spacing: -3px;
+      line-height: 0.9;
+      background: linear-gradient(to bottom, #ffffff, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      drop-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: fadeInUp 1s ease-out;
     }
 
     .hero p {
-      font-size: 18px; /* Lebih kecil dibanding judul */
-      color: var(--muted);
-      margin-top: 0;
+      font-size: clamp(1rem, 4vw, 1.4rem);
+      color: rgba(255,255,255,0.9);
+      margin-top: 20px;
+      font-weight: 400;
       max-width: 600px;
+      animation: fadeInUp 1s ease-out 0.2s backwards;
+    }
+
+    /* TOMBOL CTA MODERN */
+    .cta {
+      margin-top: 40px;
+      animation: fadeInUp 1s ease-out 0.4s backwards;
     }
 
     .cta a {
       display: inline-block;
-      margin-top: 30px;
-      padding: 12px 30px;
+      padding: 16px 40px;
       background: var(--secondary);
       color: #000;
-      border-radius: 25px;
-      font-size: 15px;
+      border-radius: 50px;
+      font-size: 16px;
       text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.2s;
+      font-weight: 700;
+      box-shadow: 0 15px 30px rgba(242, 138, 183, 0.4);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .cta a:hover {
-      opacity: 0.9;
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 20px 40px rgba(242, 138, 183, 0.6);
+      background: #fff;
+    }
+
+    /* ANIMASI */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ORNAMEN BACKGROUND (Biar gak kosong-kosong amat) */
+    .circle-blur {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: var(--primary);
+      filter: blur(100px);
+      border-radius: 50%;
+      z-index: -1;
+      opacity: 0.5;
+      top: 20%;
+      left: 10%;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      font-size: 12px;
-      color: var(--muted);
+      padding: 40px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { letter-spacing: -1px; }
     }
   </style>
 </head>
 
 <body>
 
+  <div class="circle-blur"></div>
+
   <header>
     <div class="nav">
-      <div class="logo">Home</div>
+      <div class="logo">LK.</div>
       <nav>
         <a href="profile.html">Profile</a>
         <a href="project.html">Project</a>
@@ -120,8 +186,8 @@
   </header>
 
   <main class="hero">
-    <h1>Hello saya Leanarita Kaluna</h1>
-    <p>Selamat datang di web saya</p>
+    <h1>Hello saya <br> Leanarita Kaluna</h1>
+    <p>Selamat datang di web saya. Tempat saya berbagi ide, karya, dan hal-hal yang sedang saya pelajari.</p>
     
     <div class="cta">
       <a href="project.html">Lihat Karya</a>
@@ -129,10 +195,9 @@
   </main>
 
   <footer>
-    © 2026 — dibuat oleh Leanarita.
+    © 2026 — Dibuat oleh Leanarita Kaluna.
   </footer>
 
-<!-- Panggil file JavaScript eksternal -->
   <script src="script.js"></script>
 
 </body>

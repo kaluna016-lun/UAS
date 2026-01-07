@@ -12,7 +12,7 @@
       --primary: #b8b5ff;
       --secondary: #f28ab7;
       --text: #000000;
-      --muted: #000000;
+      --muted: #333333; /* Sedikit lebih soft untuk sub-text */
     }
 
     * {
@@ -24,6 +24,9 @@
       margin: 0;
       background: linear-gradient(180deg, var(--bg), #f7f6fb);
       color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -51,56 +54,45 @@
       font-size: 14px;
     }
 
+    /* Bagian Hero yang diubah ke tengah */
     .hero {
-      max-width: 1000px;
-      margin: auto;
-      padding: 90px 20px 60px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
+      flex: 1; /* Agar konten mengisi ruang sisa dan footer tetap di bawah */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
     }
 
     .hero h1 {
-      font-size: 38px;
-      margin-bottom: 14px;
-      letter-spacing: 0.3px;
+      font-size: 48px; /* Lebih besar untuk nama */
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
     }
 
     .hero p {
-      font-size: 15px;
+      font-size: 18px; /* Lebih kecil dibanding judul */
       color: var(--muted);
-      line-height: 1.7;
-      max-width: 420px;
+      margin-top: 0;
+      max-width: 600px;
     }
 
     .cta a {
       display: inline-block;
-      margin-top: 24px;
-      padding: 12px 26px;
+      margin-top: 30px;
+      padding: 12px 30px;
       background: var(--secondary);
       color: #000;
-      border-radius: 22px;
-      font-size: 14px;
+      border-radius: 25px;
+      font-size: 15px;
       text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
     }
 
-    .card {
-      background: var(--card);
-      padding: 28px;
-      border-radius: 18px;
-      border: 1px solid #eee;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      font-size: 18px;
-      letter-spacing: 0.2px;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.7;
+    .cta a:hover {
+      opacity: 0.9;
     }
 
     footer {
@@ -108,12 +100,6 @@
       padding: 30px;
       font-size: 12px;
       color: var(--muted);
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -133,34 +119,21 @@
     </div>
   </header>
 
-  <!-- HOME -->
-  <section class="hero">
-    <div>
-      <h1>Selamat Datang</h1>
-      <p>
-        Tempat untuk menyimpan ide,
-        karya yang sedang dan pernah dibuat,
-        serta hal-hal yang dipelajari
-        selama proses berjalan.
-      </p>
-      <div class="cta">
-        <a href="project.html">Lihat Karya</a>
-      </div>
+  <main class="hero">
+    <h1>Hello saya Leanarita Kaluna</h1>
+    <p>Selamat datang di web saya</p>
+    
+    <div class="cta">
+      <a href="project.html">Lihat Karya</a>
     </div>
-
-    <div class="card">
-      <h3>Tentang Website</h3>
-      <p>
-        Website ini berisi project, media, dan catatan singkat
-        yang disusun secara sederhana
-        agar mudah dilihat dan dijelajahi.
-      </p>
-    </div>
-  </section>
+  </main>
 
   <footer>
-    © 2026 PastelWeb — dibuat oleh Leanarita.
+    © 2026 — dibuat oleh Leanarita.
   </footer>
+
+<!-- Panggil file JavaScript eksternal -->
+  <script src="script.js"></script>
 
 </body>
 </html>

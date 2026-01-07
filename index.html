@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Leanarita Kaluna</title>
+  <title>Home</title>
 
   <style>
     :root {
@@ -11,7 +11,7 @@
       --primary: #b8b5ff;
       --secondary: #f28ab7;
       --accent: #ffd6e8;
-      --text: #1a1a1a;
+      --text: #000000; /* Hitam pekat sesuai request */
     }
 
     * {
@@ -21,7 +21,6 @@
 
     body {
       margin: 0;
-      /* Gradasi menyatu dengan profile agar seamless */
       background: linear-gradient(135deg, var(--bg) 0%, #6366f1 50%, #ffffff 100%);
       background-attachment: fixed;
       color: var(--text);
@@ -31,36 +30,35 @@
       overflow-x: hidden;
     }
 
-    /* NAVBAR MODERN */
+    /* NAVBAR */
     header {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(15px);
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid #ddd;
     }
 
     .nav {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: auto;
-      padding: 18px 24px;
+      padding: 16px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .logo {
-      font-weight: 800;
-      font-size: 1.2rem;
-      letter-spacing: -1px;
-      color: var(--bg);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #000000;
     }
 
     .nav a {
-      margin-left: 20px;
+      margin-left: 18px;
       text-decoration: none;
-      color: var(--text);
+      color: #000000;
       font-size: 14px;
       font-weight: 600;
       transition: 0.3s ease;
@@ -77,89 +75,59 @@
       align-items: center;
       text-align: center;
       padding: 40px 24px;
-      position: relative;
     }
 
-    /* Efek tulisan gradasi biar Pro */
     .hero h1 {
-      font-size: clamp(3rem, 10vw, 5.5rem);
+      font-size: clamp(2.8rem, 9vw, 5rem);
       font-weight: 900;
       margin: 0;
-      letter-spacing: -3px;
-      line-height: 0.9;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      /* Efek gradasi agar tetap modern */
       background: linear-gradient(to bottom, #ffffff, var(--accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      drop-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      animation: fadeInUp 1s ease-out;
     }
 
     .hero p {
-      font-size: clamp(1rem, 4vw, 1.4rem);
-      color: rgba(255,255,255,0.9);
+      font-size: clamp(1rem, 4vw, 1.25rem);
+      color: #ffffff; /* Putih agar kontras dengan background biru */
       margin-top: 20px;
-      font-weight: 400;
       max-width: 600px;
-      animation: fadeInUp 1s ease-out 0.2s backwards;
+      font-weight: 400;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
-    /* TOMBOL CTA MODERN */
     .cta {
-      margin-top: 40px;
-      animation: fadeInUp 1s ease-out 0.4s backwards;
+      margin-top: 35px;
     }
 
     .cta a {
       display: inline-block;
-      padding: 16px 40px;
+      padding: 14px 36px;
       background: var(--secondary);
       color: #000;
       border-radius: 50px;
-      font-size: 16px;
+      font-size: 15px;
       text-decoration: none;
       font-weight: 700;
-      box-shadow: 0 15px 30px rgba(242, 138, 183, 0.4);
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s;
     }
 
     .cta a:hover {
-      transform: scale(1.05) translateY(-5px);
-      box-shadow: 0 20px 40px rgba(242, 138, 183, 0.6);
-      background: #fff;
+      transform: translateY(-3px);
+      background: #ffffff;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
     }
 
-    /* ANIMASI */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* ORNAMEN BACKGROUND (Biar gak kosong-kosong amat) */
-    .circle-blur {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: var(--primary);
-      filter: blur(100px);
-      border-radius: 50%;
-      z-index: -1;
-      opacity: 0.5;
-      top: 20%;
-      left: 10%;
-    }
-
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 40px;
       font-size: 13px;
-      font-weight: 500;
-      color: #666;
+      font-weight: 600; /* Lebih tebal */
+      color: #000000; /* Hitam pekat sesuai request */
     }
 
     @media (max-width: 600px) {
@@ -170,11 +138,9 @@
 
 <body>
 
-  <div class="circle-blur"></div>
-
   <header>
     <div class="nav">
-      <div class="logo">LK.</div>
+      <div class="logo">Home</div>
       <nav>
         <a href="profile.html">Profile</a>
         <a href="project.html">Project</a>
@@ -195,7 +161,7 @@
   </main>
 
   <footer>
-    © 2026 — Dibuat oleh Leanarita Kaluna.
+    © 2026 — dibuat oleh Leanarita.
   </footer>
 
   <script src="script.js"></script>

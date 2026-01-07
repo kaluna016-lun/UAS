@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile</title>
 
-   <style>
+  <style>
     :root {
       --bg: #393f94;
       --primary: #b8b5ff;
       --secondary: #f28ab7;
       --accent: #ffd6e8;
-      --text: #000000; /* Hitam pekat sesuai request */
+      --card-white: #ffffff; /* Warna putih untuk kartu */
+      --text-dark: #000000;
     }
 
     * {
@@ -23,14 +24,14 @@
       margin: 0;
       background: linear-gradient(135deg, var(--bg) 0%, #6366f1 50%, #ffffff 100%);
       background-attachment: fixed;
-      color: var(--text);
+      color: var(--text-dark);
       overflow-x: hidden;
     }
 
     /* NAVBAR */
     header {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -46,23 +47,24 @@
       align-items: center;
     }
 
+    /* LOGO - Sekarang jadi Hitam Pekat agar sama dengan Nav Lainnya */
     .logo {
       font-weight: 800;
-      font-size: 1.2rem;
-      color: var(--bg);
+      font-size: 1.1rem;
+      color: var(--text-dark);
       letter-spacing: -1px;
     }
 
     .nav a {
       margin-left: 20px;
       text-decoration: none;
-      color: var(--text);
+      color: var(--text-dark);
       font-size: 14px;
       font-weight: 600;
       transition: 0.3s;
     }
 
-    .nav a:hover { color: var(--accent); }
+    .nav a:hover { color: var(--secondary); }
 
     /* LAYOUT MODERN (Bento Grid) */
     .wrapper {
@@ -80,7 +82,7 @@
       font-weight: 800;
       margin: 0;
       letter-spacing: -2px;
-      line-height: 1;
+      line-height: 1.1;
       color: #fff;
       text-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
@@ -95,31 +97,31 @@
     .bento-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: auto;
       gap: 20px;
     }
 
-    /* Base Styling for All Boxes */
+    /* SEMUA KOTAK SEKARANG BERWARNA PUTIH AGAR KONSISTEN */
     .bento-item {
-      background: var(--card);
+      background: var(--card-white);
       border-radius: 30px;
       padding: 30px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
       border: 1px solid rgba(255,255,255,0.5);
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: transform 0.4s ease;
     }
 
     .bento-item:hover {
       transform: translateY(-8px);
     }
 
-    /* Customizing Spans */
-    .data-diri { grid-column: span 2; background: var(--secondary); }
+    /* Grid Spans */
+    .data-diri { grid-column: span 2; }
     .keahlian { grid-column: span 2; }
     .pengalaman { grid-column: span 2; grid-row: span 2; }
-    .pendidikan { grid-column: span 2; background: var(--primary); }
+    .pendidikan { grid-column: span 2; }
     .kontak { grid-column: span 2; }
 
+    /* AKSEN WARNA PADA JUDUL (Opsional biar ga ngebosenin) */
     h2 {
       font-size: 20px;
       font-weight: 800;
@@ -127,6 +129,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      color: var(--bg); /* Warna judul box biru biar senada background */
     }
 
     .info-list {
@@ -138,15 +141,16 @@
     .info-list li {
       padding: 10px 0;
       border-bottom: 1px solid rgba(0,0,0,0.05);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .info-list li span {
       display: block;
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
-      color: #666;
+      color: #888;
       letter-spacing: 1px;
+      margin-bottom: 2px;
     }
 
     .desc-text {
@@ -155,19 +159,20 @@
       color: #333;
     }
 
+    /* FOOTER - HITAM PEKAT */
     footer {
-  text-align: center;
-  padding: 40px;
-  font-size: 13px;
-  font-weight: 700;   /* Dibikin tebel biar tegas */
-  color: #000000;    /* Item pekat sesuai request */
-}
+      text-align: center;
+      padding: 60px 20px 40px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #000000;
+    }
 
     /* Responsive */
     @media (max-width: 850px) {
       .bento-grid { grid-template-columns: 1fr; }
       .data-diri, .keahlian, .pengalaman, .pendidikan, .kontak { grid-column: span 1; }
-      .intro-section h1 { font-size: 40px; }
+      .intro-section h1 { font-size: 38px; }
     }
   </style>
 </head>
@@ -217,23 +222,20 @@
       <p class="desc-text">
         <b>PKL (Praktik Kerja Lapangan)</b><br>
         Kementerian Agama Kota Bekasi<br>
-        <small style="color: #666;">Durasi: 3 Bulan</small>
+        <small style="color: #666;">Juni 2024 – Agustus 2024 (3 Bulan)</small>
       </p>
-      <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.1); margin: 15px 0;">
+      <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.05); margin: 20px 0;">
       <p class="desc-text" style="font-size: 14px;">
-       "Selama tiga bulan menjalankan program praktik kerja lapangan (PKL) di Kementerian Agama, saya bertanggung jawab penuh dalam manajemen administrasi kantor dan alur birokrasi surat-menyurat. 
-        Tugas utama saya meliputi digitalisasi dan pendataan arsip penting serta pengelolaan surat masuk dan keluar guna memastikan sistem dokumentasi instansi berjalan secara sistematis. Selain itu, 
-        saya juga dipercaya untuk menyusun draf surat tugas resmi, yang menuntut ketelitian tinggi dan pemahaman terhadap format penulisan standar kedinasan. Pengalaman ini telah mengasah kemampuan manajerial, 
-        kedisiplinan, serta ketelitian saya dalam bekerja di bawah lingkungan profesional yang terstruktur.
+        Selama tiga bulan di Kementerian Agama, saya bertanggung jawab dalam manajemen administrasi kantor dan alur birokrasi. Tugas saya meliputi digitalisasi arsip penting serta pengelolaan surat masuk dan keluar. Saya juga dipercaya menyusun draf surat tugas resmi yang melatih ketelitian dan disiplin saya di lingkungan profesional.
       </p>
     </div>
 
     <div class="bento-item pendidikan">
       <h2>🎓 Education</h2>
-      <ul class="info-list" style="border:none">
-        <li style="border-color: rgba(0,0,0,0.1)"><b>SMK Widya Nusantara</b></li>
-        <li style="border-color: rgba(0,0,0,0.1)"><b>SMPIT Al-Hidayah</b></li>
-        <li style="border-color: rgba(0,0,0,0.1)"><b>SDN Limbangan Timur 1</b></li>
+      <ul class="info-list">
+        <li><span>Vocational High School</span> SMK Widya Nusantara</li>
+        <li><span>Junior High School</span> SMPIT Al-Hidayah</li>
+        <li><span>Elementary School</span> SDN Limbangan Timur 1</li>
       </ul>
     </div>
 
@@ -242,7 +244,7 @@
       <p class="desc-text">
         <b>Email:</b> kaluna072@gmail.com<br>
         <b>Phone:</b> 0895327204017<br>
-        <b>Addres:</b> Tangsel, Banten
+        <b>Address:</b> Tangsel, Banten
       </p>
     </div>
 

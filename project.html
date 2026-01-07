@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project</title>
+
+  <style>
+    :root{
+      --bg:#a0a9ff;
+      --card:#ffffff;
+      --primary:#b8b5ff;
+      --secondary:#ffd6e8;
+      --text:#000000;
+      --muted:#000000;
+    }
+
+    *{
+      box-sizing:border-box;
+      font-family:'Segoe UI', system-ui, sans-serif;
+    }
+
+    body{
+      margin:0;
+      background:linear-gradient(135deg, var(--bg), #ffffff);
+      color:var(--text);
+    }
+
+    /* NAVBAR */
+    header{
+      background:#ffffff;
+      border-bottom:1px solid #ddd;
+    }
+
+    .nav{
+      max-width:1000px;
+      margin:auto;
+      padding:14px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-weight:600;
+    }
+
+    .nav a{
+      margin-left:16px;
+      text-decoration:none;
+      color:#000;
+      font-size:14px;
+    }
+
+    /* CONTENT */
+    .container{
+      max-width:1000px;
+      margin:auto;
+      padding:60px 20px;
+    }
+
+    h1{
+      font-size:36px;
+      margin-bottom:10px;
+    }
+
+    .subtitle{
+      color:var(--muted);
+      margin-bottom:40px;
+      max-width:520px;
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:24px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:20px;
+      padding:26px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.06);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .card h2{
+      margin:0 0 12px;
+      font-size:20px;
+    }
+
+    .project-link{
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 16px;
+      background:var(--primary);
+      color:#000;
+      border-radius:12px;
+      text-decoration:none;
+      font-size:14px;
+      width:fit-content;
+      transition:0.2s ease;
+    }
+
+    .project-link:hover{
+      background:var(--secondary);
+      transform:translateY(-2px);
+    }
+
+    .info{
+      font-size:13px;
+      color:#555;
+      margin-top:18px;
+    }
+
+    .info span{
+      display:block;
+      margin-bottom:6px;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:60px;
+      font-size:12px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <div class="nav">
+    <div class="logo">Project</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="project.html">Project</a>
+      <a href="media.html">Media</a>
+      <a href="informasi.html">Informasi</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <h1>Project</h1>
+  <p class="subtitle">
+    Beberapa project yang pernah dibuat sebagai latihan
+    dan pengembangan kemampuan web.
+  </p>
+
+  <div class="projects">
+
+    <!-- PROJECT 1 -->
+    <div class="card">
+      <div>
+        <h2>News</h2>
+        <a class="project-link" href="https://chipper-chaja-7b3081.netlify.app/" target="_blank">
+          Lihat Project →
+        </a>
+      </div>
+      <div class="info">
+        <span>Teknologi : HTML, CSS</span>
+        <span>Status : Selesai</span>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="card">
+      <div>
+        <h2>Kalkulator Nilai</h2>
+        <a class="project-link" href="https://cosmic-semifreddo-6789a0.netlify.app/" target="_blank">
+          Lihat Project →
+        </a>
+      </div>
+      <div class="info">
+        <span>Teknologi : HTML, CSS</span>
+        <span>Status : Selesai</span>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="card">
+      <div>
+        <h2>Biodata</h2>
+        <a class="project-link" href="https://effulgent-chimera-eba5eb.netlify.app/" target="_blank">
+          Lihat Project →
+        </a>
+      </div>
+      <div class="info">
+        <span>Teknologi : HTML, CSS</span>
+        <span>Status : Selesai</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 — Halaman Project
+  </footer>
+
+</div>
+
+</body>
+</html>

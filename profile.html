@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile</title>
+
+  <style>
+    :root{
+      --bg:#393f94;
+      --card:#ffffff;
+      --primary:#b8b5ff;
+      --secondary:#ffd6e8;
+      --text:#000000;
+      --muted:#000000;
+    }
+
+    *{
+      box-sizing:border-box;
+      font-family:'Segoe UI', system-ui, sans-serif;
+    }
+
+    body{
+      margin:0;
+      background:linear-gradient(135deg, var(--bg), #ffffff);
+      color:var(--text);
+    }
+
+    /* NAVBAR */
+    header{
+      background:#fff;
+      border-bottom:1px solid #ddd;
+    }
+
+    .nav{
+      max-width:1000px;
+      margin:auto;
+      padding:14px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-weight:600;
+    }
+
+    .nav a{
+      margin-left:16px;
+      text-decoration:none;
+      color:#000;
+      font-size:14px;
+    }
+
+    /* CONTENT */
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:60px 20px;
+    }
+
+    h1{
+      font-size:36px;
+      margin-bottom:10px;
+    }
+
+    .subtitle{
+      color:var(--muted);
+      margin-bottom:40px;
+      max-width:520px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:20px;
+      padding:28px;
+      margin-bottom:24px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.06);
+    }
+
+    .card h2{
+      margin-top:0;
+      margin-bottom:16px;
+      font-size:22px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .card p{
+      margin:6px 0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:60px;
+      font-size:12px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <div class="nav">
+    <div class="logo">Profile</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="project.html">Project</a>
+      <a href="media.html">Media</a>
+      <a href="informasi.html">Informasi</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <h1>Profile</h1>
+  <p class="subtitle">
+    Halaman ini berisi gambaran singkat tentang diri saya,
+    mulai dari data pribadi, latar belakang, sampai pengalaman.
+  </p>
+
+  <!-- DATA DIRI -->
+  <div class="card">
+    <h2>📌 Data Diri</h2>
+    <p>Nama : Leanarita Kaluna S</p>
+    <p>NIM : 251011700994</p>
+    <p>Kelas : 01SIFP017</p>
+  </div>
+
+  <!-- KEAHLIAN -->
+  <div class="card">
+    <h2>🛠 Keahlian & Minat</h2>
+    <p>
+      Tertarik di bidang pengembangan web, khususnya pembuatan
+      website sederhana menggunakan HTML dan CSS. Saat ini
+      masih terus belajar dan mengembangkan kemampuan.
+    </p>
+  </div>
+
+  <!-- PENGALAMAN -->
+  <div class="card">
+    <h2>💼 Pengalaman</h2>
+    <p>
+      Pernah menjalani Praktik Kerja Lapangan (PKL) selama 3 bulan
+      di Kementerian Agama. Kegiatan yang dilakukan meliputi
+      pendataan surat, pengarsipan dokumen, dan penataan data administrasi.
+    </p>
+  </div>
+
+  <!-- PENDIDIKAN -->
+  <div class="card">
+    <h2>🎓 Pendidikan</h2>
+    <ul>
+      <li>SD : SDN Limbngan Timur 1</li>
+      <li>SMP : SMPIT Al-Hidayah</li>
+      <li>SMA/SMK : SMK Widya Nusantara</li>
+    </ul>
+  </div>
+
+  <!-- KONTAK -->
+  <div class="card">
+    <h2>📞 Kontak</h2>
+    <p>Email : kaluna072@gmail.com</p>
+    <p>No. HP : 0895327204017</p>
+    <p>Alamat : Tangerang Selatan, Banten</p>
+  </div>
+
+  <footer>
+    © 2026 — Halaman Profile
+  </footer>
+</div>
+
+</body>
+</html>

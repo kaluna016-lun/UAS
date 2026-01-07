@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Project</title>
+
+  <style>
+    :root {
+      --bg: #9f8bf2;
+      --card: #ffffff;
+      --primary: #b8b5ff;
+      --secondary: #f28ab7;
+      --text: #000000;
+      --muted: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg), #f7f6fb);
+      color: var(--text);
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav {
+      max-width: 1000px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 600;
+    }
+
+    .nav a {
+      margin-left: 16px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .hero {
+      max-width: 1000px;
+      margin: auto;
+      padding: 90px 20px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 420px;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 26px;
+      background: var(--secondary);
+      color: #000;
+      border-radius: 22px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 28px;
+      border-radius: 18px;
+      border: 1px solid #eee;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 18px;
+      letter-spacing: 0.2px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="logo">Home</div>
+      <nav>
+        <a href="profile.html">Profile</a>
+        <a href="project.html">Project</a>
+        <a href="media.html">Media</a>
+        <a href="informasi.html">Informasi</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <section class="hero">
+    <div>
+      <h1>Ruang Kreatif</h1>
+      <p>
+        Tempat untuk menyimpan ide,
+        karya yang sedang dan pernah dibuat,
+        serta hal-hal yang dipelajari
+        selama proses berjalan.
+      </p>
+      <div class="cta">
+        <a href="project.html">Lihat Karya</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Tentang Website</h3>
+      <p>
+        Website ini berisi project, media, dan catatan singkat
+        yang disusun secara sederhana
+        agar mudah dilihat dan dijelajahi.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 PastelWeb — dibuat oleh Leanarita.
+  </footer>
+
+</body>
+</html>

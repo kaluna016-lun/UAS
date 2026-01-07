@@ -6,184 +6,253 @@
   <title>Media</title>
 
   <style>
-    :root{
-      --bg:#e58eff;
-      --card:#ffffff;
-      --primary:#b8b5ff;
-      --secondary:#ffd6e8;
-      --text:#000000;
-      --muted:#000000;
+    :root {
+      --bg: #393f94;
+      --card: #ffffff;
+      --primary: #b8b5ff;
+      --secondary: #f28ab7;
+      --accent: #ffd6e8;
+      --text-dark: #000000;
     }
 
-    *{
-      box-sizing:border-box;
-      font-family:'Segoe UI', system-ui, sans-serif;
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     }
 
-    body{
-      margin:0;
-      background:linear-gradient(135deg, var(--bg), #ffffff);
-      color:var(--text);
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, var(--bg) 0%, #6366f1 50%, #ffffff 100%);
+      background-attachment: fixed;
+      color: var(--text-dark);
+      overflow-x: hidden;
     }
 
     /* NAVBAR */
-    header{
-      background:#fff;
-      border-bottom:1px solid #ddd;
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #ddd;
     }
 
-    .nav{
-      max-width:1000px;
-      margin:auto;
-      padding:14px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .logo{
-      font-weight:600;
+    .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text-dark);
     }
 
-    .nav a{
-      margin-left:16px;
-      text-decoration:none;
-      color:#000;
-      font-size:14px;
+    .nav a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
     }
 
-    /* CONTENT */
-    .container{
-      max-width:1000px;
-      margin:auto;
-      padding:60px 20px;
+    .nav a:hover { color: var(--secondary); }
+
+    /* CONTENT WRAPPER */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 24px;
     }
 
-    h1{
-      font-size:36px;
-      margin-bottom:10px;
+    .header-content {
+      margin-bottom: 50px;
+      color: #fff;
     }
 
-    .subtitle{
-      color:var(--muted);
-      margin-bottom:40px;
-      max-width:520px;
+    .header-content h1 {
+      font-size: 48px;
+      font-weight: 900;
+      margin: 0;
+      letter-spacing: -2px;
     }
 
-    .card{
-      background:var(--card);
-      border-radius:20px;
-      padding:26px;
-      margin-bottom:28px;
-      box-shadow:0 20px 40px rgba(0,0,0,0.06);
+    .header-content .subtitle {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-top: 10px;
+      max-width: 600px;
     }
 
-    .card h2{
-      margin-top:0;
-      margin-bottom:16px;
-      font-size:22px;
+    /* MEDIA BENTO GRID */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
     }
 
-    video, audio{
-      width:100%;
-      max-width:420px;
-      border-radius:14px;
-      outline:none;
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.5);
+      transition: transform 0.3s ease;
     }
 
-    .images{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-      gap:16px;
+    .card:hover { transform: translateY(-5px); }
+
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--bg);
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .images img{
-      width:100%;
-      border-radius:16px;
-      object-fit:cover;
-      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+    /* VIDEO & AUDIO CUSTOM */
+    video, audio {
+      width: 100%;
+      border-radius: 20px;
+      outline: none;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     }
 
-    .doc{
-      padding:16px 20px;
-      background:linear-gradient(135deg, var(--primary), var(--secondary));
-      color:#000;
-      border-radius:14px;
-      display:inline-block;
-      font-size:14px;
+    /* GALLERY SECTION (Full width on grid) */
+    .gallery-card {
+      grid-column: span 2;
     }
 
-    footer{
-      text-align:center;
-      margin-top:60px;
-      font-size:12px;
-      color:var(--muted);
+    .images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .images-grid img {
+      width: 100%;
+      height: 250px;
+      border-radius: 20px;
+      object-fit: cover;
+      transition: 0.4s;
+      cursor: pointer;
+    }
+
+    .images-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    /* DOCUMENT BUTTON */
+    .doc-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 16px 30px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #000;
+      text-decoration: none;
+      border-radius: 18px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.3s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .doc-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    /* FOOTER - HITAM PEKAT */
+    footer {
+      text-align: center;
+      padding: 60px 20px 40px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #000000;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 850px) {
+      .media-grid { grid-template-columns: 1fr; }
+      .gallery-card { grid-column: span 1; }
+      .header-content h1 { font-size: 36px; }
     }
   </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <div class="nav">
-    <div class="logo">Media</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="profile.html">Profile</a>
-      <a href="project.html">Project</a>
-      <a href="media.html">Media</a>
-      <a href="informasi.html">Informasi</a>
-      <a href="kontak.html">Kontak</a>
-    </nav>
-  </div>
-</header>
-
-<div class="container">
-  <h1>Media</h1>
-  <p class="subtitle">
-    Kumpulan media yang pernah digunakan atau dibuat,
-    mulai dari video, audio, hingga dokumentasi visual.
-  </p>
-
-  <!-- VIDEO -->
-  <div class="card">
-    <h2>🎬 Video</h2>
-    <video controls>
-      <source src="ssstik.io_@asmrcarasmr_1767710806210.mp4" type="video/mp4" />
-      Browser Anda tidak mendukung video.
-    </video>
-  </div>
-
-  <!-- AUDIO -->
-  <div class="card">
-    <h2>🎧 Audio</h2>
-    <audio controls>
-      <source src="Audio WhatsApp 2025-02-25 pukul 22.03.41_a24cc6a2.mp3" type="audio/mpeg" />
-      Browser Anda tidak mendukung audio.
-    </audio>
-  </div>
-
-  <!-- GAMBAR -->
-  <div class="card">
-    <h2>🏞️ Galeri</h2>
-    <div class="images">
-      <img src="download (11).jpeg" alt="Gambar 1" />
-      <img src="download (12).jpeg" alt="Gambar 2" />
-      <img src="guess who.jpeg" alt="Gambar 3" />
+  <header>
+    <div class="nav">
+      <div class="logo">Media</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="project.html">Project</a>
+        <a href="media.html">Media</a>
+        <a href="informasi.html">Informasi</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
     </div>
+  </header>
+
+  <div class="container">
+    <div class="header-content">
+      <h1>Media</h1>
+      <p class="subtitle">Kumpulan media digital yang pernah digunakan, mulai dari video tutorial, audio, hingga dokumentasi visual.</p>
+    </div>
+
+    <div class="media-grid">
+      
+      <div class="card">
+        <h2>🎬 Video Content</h2>
+        <video controls>
+          <source src="ssstik.io_@asmrcarasmr_1767710806210.mp4" type="video/mp4" />
+          Browser Anda tidak mendukung video.
+        </video>
+      </div>
+
+      <div class="card">
+        <h2>🎧 Audio Record</h2>
+        <audio controls>
+          <source src="Audio WhatsApp 2025-02-25 pukul 22.03.41_a24cc6a2.mp3" type="audio/mpeg" />
+          Browser Anda tidak mendukung audio.
+        </audio>
+      </div>
+
+      <div class="card gallery-card">
+        <h2>🏞️ Visual Gallery</h2>
+        <div class="images-grid">
+          <img src="download (11).jpeg" alt="Gambar 1" />
+          <img src="download (12).jpeg" alt="Gambar 2" />
+          <img src="guess who.jpeg" alt="Gambar 3" />
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>📄 Documentations</h2>
+        <p style="margin-bottom: 20px; font-size: 14px; color: #444;">Akses file PDF atau dokumen pendukung lainnya di sini.</p>
+        <a href="#" class="doc-btn">Lihat Dokumen</a>
+      </div>
+
+    </div>
+
+    <footer>
+      © 2026 — Halaman Media
+    </footer>
   </div>
 
-  <!-- DOKUMEN -->
-  <div class="card">
-    <h2>📄 Dokumen</h2>
-    <div class="doc">Lihat Dokumen</div>
-  </div>
-
-  <footer>
-    © 2026 — Halaman Media
-  </footer>
-  <!-- Panggil JavaScript eksternal -->
   <script src="script.js"></script>
 
 </body>
